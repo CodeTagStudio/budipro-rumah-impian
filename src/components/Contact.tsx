@@ -31,36 +31,26 @@ const Contact = () => {
       icon: Phone,
       title: 'Telepon',
       info: '+62 21 8765 4321',
-      subInfo: 'Senin - Minggu: 08:00 - 21:00',
-      color: 'bg-primary/10 text-primary'
+      subInfo: 'Senin - Minggu: 08:00 - 21:00'
     },
     {
       icon: MessageCircle,
       title: 'WhatsApp',
       info: '+62 812 3456 7890',
-      subInfo: 'Respon cepat 24/7',
-      color: 'bg-green-500/10 text-green-600'
+      subInfo: 'Respon cepat 24/7'
     },
     {
       icon: Mail,
       title: 'Email',
       info: 'info@budipro.id',
-      subInfo: 'Respon dalam 2 jam',
-      color: 'bg-secondary/10 text-secondary'
+      subInfo: 'Respon dalam 2 jam'
     },
     {
       icon: MapPin,
       title: 'Kantor Pusat',
       info: 'Jl. Sudirman Kav. 25',
-      subInfo: 'Jakarta Selatan 12190',
-      color: 'bg-accent/10 text-accent'
+      subInfo: 'Jakarta Selatan 12190'
     }
-  ];
-
-  const officeHours = [
-    { day: 'Senin - Jumat', time: '08:00 - 20:00' },
-    { day: 'Sabtu', time: '09:00 - 18:00' },
-    { day: 'Minggu', time: '10:00 - 16:00' }
   ];
 
   const testimonials = [
@@ -101,29 +91,28 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-card/50 to-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-16 bg-background">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
-          <Badge variant="outline" className="mb-4 px-4 py-2 text-accent border-accent/20 bg-accent/5">
+        <div className="text-center mb-12 animate-fade-in">
+          <Badge variant="outline" className="mb-4 px-4 py-1 text-primary border-primary/20">
             Hubungi Kami
           </Badge>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Siap Membantu
-            <span className="text-gradient block">Wujudkan Rumah Impian</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+            Siap Membantu Wujudkan Rumah Impian
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Tim profesional kami siap memberikan konsultasi gratis dan membantu Anda 
-            menemukan solusi properti terbaik sesuai kebutuhan
+            menemukan solusi properti terbaik
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12 mb-16">
+        <div className="grid lg:grid-cols-3 gap-12 mb-12">
           {/* Contact Form */}
-          <div className="lg:col-span-2 animate-fade-in-up">
-            <Card className="p-8 bg-card border-border shadow-medium">
-              <div className="mb-8">
-                <h3 className="text-2xl font-bold text-card-foreground mb-2">
+          <div className="lg:col-span-2 animate-fade-in">
+            <Card className="card-minimal p-6">
+              <div className="mb-6">
+                <h3 className="text-xl font-bold text-card-foreground mb-2">
                   Konsultasi Gratis
                 </h3>
                 <p className="text-muted-foreground">
@@ -131,8 +120,8 @@ const Contact = () => {
                 </p>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-card-foreground mb-2">
                       Nama Lengkap *
@@ -163,7 +152,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-card-foreground mb-2">
                       Nomor WhatsApp *
@@ -207,7 +196,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <Button type="submit" className="btn-hero w-full">
+                <Button type="submit" className="btn-primary w-full">
                   <Send className="mr-2 h-4 w-4" />
                   Kirim Pesan
                 </Button>
@@ -216,55 +205,58 @@ const Contact = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-6 animate-slide-in-right">
-            {/* Contact Methods */}
-            <div className="space-y-4">
-              {contactInfo.map((contact, index) => {
-                const IconComponent = contact.icon;
-                return (
-                  <Card 
-                    key={index} 
-                    className={`card-hover p-6 bg-card border-border animate-fade-in-scale animation-delay-${index * 100}`}
-                  >
-                    <div className={`inline-flex p-3 rounded-xl ${contact.color} mb-4`}>
-                      <IconComponent className="w-5 h-5" />
-                    </div>
-                    <h4 className="font-semibold text-card-foreground mb-1">
-                      {contact.title}
-                    </h4>
-                    <p className="text-sm font-medium text-card-foreground mb-1">
-                      {contact.info}
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                      {contact.subInfo}
-                    </p>
-                  </Card>
-                );
-              })}
-            </div>
+          <div className="space-y-4 animate-fade-in animation-delay-200">
+            {contactInfo.map((contact, index) => {
+              const IconComponent = contact.icon;
+              return (
+                <Card 
+                  key={index} 
+                  className={`card-minimal p-4 animate-fade-in animation-delay-${(index + 2) * 100}`}
+                >
+                  <div className="bg-primary/10 text-primary inline-flex p-2 rounded-lg mb-3">
+                    <IconComponent className="w-4 h-4" />
+                  </div>
+                  <h4 className="font-semibold text-card-foreground mb-1">
+                    {contact.title}
+                  </h4>
+                  <p className="text-sm font-medium text-card-foreground mb-1">
+                    {contact.info}
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    {contact.subInfo}
+                  </p>
+                </Card>
+              );
+            })}
 
             {/* Office Hours */}
-            <Card className="p-6 bg-card border-border">
-              <div className="flex items-center mb-4">
-                <Clock className="w-5 h-5 text-primary mr-3" />
+            <Card className="card-minimal p-4">
+              <div className="flex items-center mb-3">
+                <Clock className="w-4 h-4 text-primary mr-2" />
                 <h4 className="font-semibold text-card-foreground">Jam Operasional</h4>
               </div>
-              <div className="space-y-2">
-                {officeHours.map((hour, index) => (
-                  <div key={index} className="flex justify-between text-sm">
-                    <span className="text-muted-foreground">{hour.day}</span>
-                    <span className="font-medium text-card-foreground">{hour.time}</span>
-                  </div>
-                ))}
+              <div className="space-y-1 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Senin - Jumat</span>
+                  <span className="font-medium text-card-foreground">08:00 - 20:00</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Sabtu</span>
+                  <span className="font-medium text-card-foreground">09:00 - 18:00</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Minggu</span>
+                  <span className="font-medium text-card-foreground">10:00 - 16:00</span>
+                </div>
               </div>
             </Card>
           </div>
         </div>
 
         {/* Testimonials */}
-        <div className="animate-fade-in-up animation-delay-600">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+        <div className="animate-fade-in animation-delay-400">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-foreground mb-3">
               Kata Mereka Tentang Kami
             </h3>
             <p className="text-muted-foreground">
@@ -272,27 +264,27 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             {testimonials.map((testimonial, index) => (
               <Card 
                 key={index} 
-                className={`card-hover p-6 bg-card border-border animate-fade-in-scale animation-delay-${index * 200}`}
+                className={`card-minimal p-5 animate-fade-in animation-delay-${(index + 5) * 100}`}
               >
-                <div className="flex items-center mb-4">
+                <div className="flex items-center mb-3">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-accent fill-current" />
+                    <Star key={i} className="w-4 h-4 text-accent fill-current" />
                   ))}
                 </div>
-                <p className="text-muted-foreground mb-4 leading-relaxed">
+                <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
                   "{testimonial.message}"
                 </p>
                 <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-secondary mr-3" />
+                  <CheckCircle className="w-4 h-4 text-accent mr-3" />
                   <div>
-                    <div className="font-semibold text-card-foreground">
+                    <div className="font-semibold text-card-foreground text-sm">
                       {testimonial.name}
                     </div>
-                    <div className="text-sm text-muted-foreground">
+                    <div className="text-xs text-muted-foreground">
                       {testimonial.role}
                     </div>
                   </div>

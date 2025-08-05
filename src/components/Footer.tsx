@@ -39,31 +39,31 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-card to-primary/5 border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-muted/30 border-t border-border">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="py-12 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <h3 className="text-2xl font-bold text-gradient mb-4">
+            <h3 className="text-xl font-bold text-foreground mb-4">
               BudiPro.id
             </h3>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
+            <p className="text-muted-foreground mb-6 leading-relaxed text-sm">
               Partner terpercaya dalam mewujudkan impian memiliki rumah. 
               Dengan pengalaman 15+ tahun, kami siap membantu keluarga Indonesia.
             </p>
             
             {/* Social Media */}
-            <div className="flex space-x-4">
+            <div className="flex space-x-3">
               {socialLinks.map((social, index) => {
                 const IconComponent = social.icon;
                 return (
                   <a
                     key={index}
                     href={social.href}
-                    className={`p-2 bg-card-hover rounded-lg border border-border transition-all duration-300 ${social.color} hover:scale-110 hover:shadow-medium`}
+                    className={`p-2 bg-background rounded-lg border border-border transition-all duration-200 ${social.color} hover:shadow-soft`}
                   >
-                    <IconComponent className="w-5 h-5" />
+                    <IconComponent className="w-4 h-4" />
                   </a>
                 );
               })}
@@ -72,13 +72,13 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-semibold text-foreground mb-6">Navigasi</h4>
-            <ul className="space-y-3">
+            <h4 className="font-semibold text-foreground mb-4">Navigasi</h4>
+            <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors duration-300 link-underline"
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -89,10 +89,10 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold text-foreground mb-6">Layanan Kami</h4>
-            <ul className="space-y-3">
+            <h4 className="font-semibold text-foreground mb-4">Layanan Kami</h4>
+            <ul className="space-y-2">
               {services.map((service, index) => (
-                <li key={index} className="text-muted-foreground">
+                <li key={index} className="text-sm text-muted-foreground">
                   {service}
                 </li>
               ))}
@@ -101,45 +101,45 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-semibold text-foreground mb-6">Kontak</h4>
-            <div className="space-y-4">
+            <h4 className="font-semibold text-foreground mb-4">Kontak</h4>
+            <div className="space-y-3">
               <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                <div className="text-muted-foreground">
+                <MapPin className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                <div className="text-sm text-muted-foreground">
                   <div>Jl. Sudirman Kav. 25</div>
                   <div>Jakarta Selatan 12190</div>
                 </div>
               </div>
               
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-muted-foreground">+62 21 8765 4321</span>
+                <Phone className="w-4 h-4 text-primary flex-shrink-0" />
+                <span className="text-sm text-muted-foreground">+62 21 8765 4321</span>
               </div>
               
               <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-muted-foreground">info@budipro.id</span>
+                <Mail className="w-4 h-4 text-primary flex-shrink-0" />
+                <span className="text-sm text-muted-foreground">info@budipro.id</span>
               </div>
             </div>
 
             {/* CTA Button */}
-            <Button className="btn-hero w-full mt-6">
+            <Button className="btn-primary w-full mt-4">
               Konsultasi Sekarang
             </Button>
           </div>
         </div>
 
         {/* Bottom Footer */}
-        <div className="py-8 border-t border-border">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <div className="py-6 border-t border-border">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
             <div className="text-muted-foreground text-sm">
               © 2024 BudiPro.id. All rights reserved.
             </div>
             
             <div className="flex items-center space-x-6 text-sm text-muted-foreground">
-              <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-primary transition-colors">Sitemap</a>
+              <a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-foreground transition-colors">Terms of Service</a>
+              <a href="#" className="hover:text-foreground transition-colors">Sitemap</a>
             </div>
 
             {/* Back to Top */}
@@ -147,10 +147,10 @@ const Footer = () => {
               variant="outline"
               size="sm"
               onClick={scrollToTop}
-              className="border-primary/20 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              className="border-primary/20 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200"
             >
-              <ArrowUp className="w-4 h-4 mr-2" />
-              Kembali ke Atas
+              <ArrowUp className="w-4 h-4 mr-1" />
+              Top
             </Button>
           </div>
         </div>

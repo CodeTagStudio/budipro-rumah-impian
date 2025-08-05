@@ -21,7 +21,6 @@ const PropertyShowcase = () => {
       carport: 1,
       rating: 4.8,
       reviews: 24,
-      isSubsidi: true,
       badge: 'Terlaris'
     },
     {
@@ -37,7 +36,6 @@ const PropertyShowcase = () => {
       carport: 1,
       rating: 4.9,
       reviews: 18,
-      isSubsidi: true,
       badge: 'Hot Deal'
     },
     {
@@ -53,72 +51,67 @@ const PropertyShowcase = () => {
       carport: 1,
       rating: 4.7,
       reviews: 31,
-      isSubsidi: true,
       badge: 'DP 0%'
     }
   ];
 
   return (
-    <section id="properties" className="py-20 bg-gradient-to-b from-background to-card/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="properties" className="py-16 bg-muted/30">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
-          <Badge variant="outline" className="mb-4 px-4 py-2 text-primary border-primary/20 bg-primary/5">
+        <div className="text-center mb-12 animate-fade-in">
+          <Badge variant="outline" className="mb-4 px-4 py-1 text-primary border-primary/20">
             Properti Unggulan
           </Badge>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Pilihan Rumah
-            <span className="text-gradient block">Bersubsidi Terbaik</span>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">
+            Pilihan Rumah Bersubsidi Terbaik
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Temukan berbagai pilihan rumah bersubsidi dengan lokasi strategis, 
-            fasilitas lengkap, dan cicilan yang terjangkau untuk keluarga Indonesia
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Temukan berbagai pilihan rumah bersubsidi dengan lokasi strategis dan cicilan terjangkau
           </p>
         </div>
 
         {/* Property Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {properties.map((property, index) => (
             <Card 
               key={property.id} 
-              className={`card-hover group bg-card border-border overflow-hidden animate-fade-in-scale animation-delay-${index * 200}`}
+              className={`card-minimal group overflow-hidden animate-fade-in animation-delay-${index * 100}`}
             >
               {/* Property Image */}
               <div className="relative overflow-hidden">
                 <img
                   src={property.image}
                   alt={property.title}
-                  className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 
-                {/* Badges */}
-                <div className="absolute top-4 left-4">
-                  <Badge className="bg-accent text-accent-foreground font-semibold">
+                {/* Badge */}
+                <div className="absolute top-3 left-3">
+                  <Badge className="bg-accent text-accent-foreground text-xs">
                     {property.badge}
                   </Badge>
                 </div>
                 
-                {property.isSubsidi && (
-                  <div className="absolute top-4 right-4">
-                    <Badge variant="secondary" className="bg-secondary text-secondary-foreground">
-                      KPR Bersubsidi
-                    </Badge>
-                  </div>
-                )}
+                {/* KPR Badge */}
+                <div className="absolute top-3 right-3">
+                  <Badge variant="secondary" className="text-xs">
+                    KPR Bersubsidi
+                  </Badge>
+                </div>
 
                 {/* Rating */}
-                <div className="absolute bottom-4 right-4 bg-background/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center space-x-1">
-                  <Star className="w-4 h-4 text-accent" fill="currentColor" />
-                  <span className="text-sm font-medium">{property.rating}</span>
-                  <span className="text-xs text-muted-foreground">({property.reviews})</span>
+                <div className="absolute bottom-3 right-3 bg-background/90 backdrop-blur-sm rounded-md px-2 py-1 flex items-center space-x-1">
+                  <Star className="w-3 h-3 text-accent" fill="currentColor" />
+                  <span className="text-xs font-medium">{property.rating}</span>
                 </div>
               </div>
 
               {/* Property Details */}
-              <div className="p-6">
+              <div className="p-5">
                 <div className="mb-4">
-                  <div className="text-sm text-muted-foreground mb-1">{property.type}</div>
-                  <h3 className="text-xl font-bold text-card-foreground mb-2 group-hover:text-primary transition-colors">
+                  <div className="text-xs text-muted-foreground mb-1">{property.type}</div>
+                  <h3 className="text-lg font-semibold text-card-foreground mb-2 group-hover:text-primary transition-colors">
                     {property.title}
                   </h3>
                   <div className="flex items-center text-muted-foreground mb-3">
@@ -144,9 +137,9 @@ const PropertyShowcase = () => {
                 </div>
 
                 {/* Price */}
-                <div className="mb-6">
+                <div className="mb-5">
                   <div className="flex items-baseline space-x-2">
-                    <span className="text-2xl font-bold text-accent">{property.price}</span>
+                    <span className="text-xl font-bold text-accent">{property.price}</span>
                     <span className="text-sm text-muted-foreground">cicilan</span>
                   </div>
                   <div className="text-sm text-muted-foreground">
@@ -155,7 +148,7 @@ const PropertyShowcase = () => {
                 </div>
 
                 {/* CTA Button */}
-                <Button className="w-full btn-hero group">
+                <Button className="w-full btn-outline group">
                   Lihat Detail
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
@@ -165,10 +158,10 @@ const PropertyShowcase = () => {
         </div>
 
         {/* See More Button */}
-        <div className="text-center animate-fade-in-up animation-delay-600">
-          <Button variant="outline" size="lg" className="px-8 py-4 text-primary border-primary hover:bg-primary hover:text-primary-foreground">
+        <div className="text-center animate-fade-in animation-delay-300">
+          <Button className="btn-primary">
             Lihat Semua Properti
-            <ArrowRight className="ml-2 h-5 w-5" />
+            <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </div>

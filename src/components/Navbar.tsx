@@ -15,12 +15,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border shadow-soft">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-14">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-2xl font-bold text-gradient">
+            <h1 className="text-xl font-semibold text-foreground">
               BudiPro.id
             </h1>
           </div>
@@ -32,7 +32,7 @@ const Navbar = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="link-underline px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors duration-300"
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
                 >
                   {item.name}
                 </a>
@@ -42,7 +42,7 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="btn-hero text-sm">
+            <Button className="btn-primary">
               Konsultasi Gratis
             </Button>
           </div>
@@ -63,7 +63,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-background border-b border-border shadow-medium animate-fade-in-up">
+        <div className="md:hidden bg-background/95 backdrop-blur-sm border-b border-border animate-fade-in">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map((item) => {
               const IconComponent = item.icon;
@@ -72,15 +72,15 @@ const Navbar = () => {
                   key={item.name}
                   href={item.href}
                   onClick={toggleMenu}
-                  className="flex items-center px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-card-hover rounded-md transition-colors duration-300"
+                  className="flex items-center px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted rounded transition-colors duration-200"
                 >
-                  <IconComponent size={20} className="mr-3" />
+                  <IconComponent size={18} className="mr-3" />
                   {item.name}
                 </a>
               );
             })}
             <div className="px-3 py-2">
-              <Button className="btn-hero w-full text-sm">
+              <Button className="btn-primary w-full">
                 Konsultasi Gratis
               </Button>
             </div>

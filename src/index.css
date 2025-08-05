@@ -2,63 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-/* BudiPro.id Design System - Modern Property Agent Website */
+/* BudiPro.id Minimalist Design System */
 
 @layer base {
   :root {
-    /* Core Brand Colors */
-    --background: 0 0% 98%;
-    --foreground: 210 50% 10%;
+    /* Minimal Color Palette */
+    --background: 0 0% 100%;
+    --foreground: 216 12% 16%;
 
-    /* Brand Primary - Professional Navy */
-    --primary: 210 100% 20%;
+    /* Clean Primary - Subtle Blue */
+    --primary: 216 50% 30%;
     --primary-foreground: 0 0% 98%;
-    --primary-light: 210 100% 35%;
-    --primary-glow: 210 100% 50%;
+    --primary-light: 216 50% 85%;
 
-    /* Brand Secondary - Growth Green */
-    --secondary: 142 76% 36%;
-    --secondary-foreground: 0 0% 98%;
-    --secondary-light: 142 69% 58%;
+    /* Minimal Secondary - Soft Gray */
+    --secondary: 214 12% 92%;
+    --secondary-foreground: 216 12% 16%;
 
-    /* Accent - Premium Gold */
-    --accent: 45 93% 47%;
-    --accent-foreground: 210 50% 10%;
-    --accent-light: 45 100% 70%;
+    /* Subtle Accent - Warm Orange */
+    --accent: 25 85% 55%;
+    --accent-foreground: 0 0% 98%;
 
-    /* Card & Surface */
+    /* Clean Surfaces */
     --card: 0 0% 100%;
-    --card-foreground: 210 50% 10%;
-    --card-hover: 210 20% 98%;
+    --card-foreground: 216 12% 16%;
+    --card-hover: 0 0% 98%;
 
-    /* Interactive Elements */
     --popover: 0 0% 100%;
-    --popover-foreground: 210 50% 10%;
+    --popover-foreground: 216 12% 16%;
     
-    --muted: 210 40% 96%;
-    --muted-foreground: 210 25% 45%;
+    --muted: 214 12% 96%;
+    --muted-foreground: 216 8% 50%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 65% 51%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 210 20% 90%;
-    --input: 210 20% 90%;
-    --ring: 210 100% 20%;
+    --border: 214 12% 88%;
+    --input: 214 12% 88%;
+    --ring: 216 50% 30%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Design System Extensions */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--card-hover)));
-    --gradient-accent: linear-gradient(90deg, hsl(var(--accent)), hsl(var(--accent-light)));
-    
-    --shadow-soft: 0 4px 20px -2px hsl(var(--primary) / 0.1);
-    --shadow-medium: 0 10px 25px -3px hsl(var(--primary) / 0.15);
-    --shadow-strong: 0 20px 40px -5px hsl(var(--primary) / 0.2);
-    --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.3);
+    /* Minimal Shadows */
+    --shadow-minimal: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.06);
+    --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
 
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Clean Transitions */
+    --transition-base: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 
     /* Sidebar Variables */
     --sidebar-background: 0 0% 98%;
@@ -72,38 +63,31 @@
   }
 
   .dark {
-    --background: 210 50% 7%;
+    --background: 216 12% 8%;
     --foreground: 0 0% 95%;
 
-    --primary: 210 100% 65%;
-    --primary-foreground: 210 50% 7%;
-    --primary-light: 210 100% 75%;
-    --primary-glow: 210 100% 80%;
+    --primary: 216 50% 60%;
+    --primary-foreground: 216 12% 8%;
+    --primary-light: 216 50% 20%;
 
-    --secondary: 142 69% 58%;
-    --secondary-foreground: 210 50% 7%;
-    --secondary-light: 142 76% 70%;
+    --secondary: 216 12% 12%;
+    --secondary-foreground: 0 0% 95%;
 
-    --accent: 45 100% 70%;
-    --accent-foreground: 210 50% 7%;
-    --accent-light: 45 100% 80%;
+    --accent: 25 85% 55%;
+    --accent-foreground: 216 12% 8%;
 
-    --card: 210 50% 10%;
+    --card: 216 12% 10%;
     --card-foreground: 0 0% 95%;
-    --card-hover: 210 50% 12%;
+    --card-hover: 216 12% 12%;
 
-    --popover: 210 50% 10%;
+    --popover: 216 12% 10%;
     --popover-foreground: 0 0% 95%;
 
-    --muted: 210 50% 15%;
-    --muted-foreground: 210 25% 65%;
+    --muted: 216 12% 15%;
+    --muted-foreground: 216 8% 65%;
 
-    --destructive: 0 62% 50%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 210 20% 20%;
-    --input: 210 20% 20%;
-    --ring: 210 100% 65%;
+    --border: 216 12% 20%;
+    --input: 216 12% 20%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -122,8 +106,9 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-normal;
     font-feature-settings: "rlig" 1, "calt" 1;
+    line-height: 1.6;
   }
 
   html {
@@ -132,45 +117,35 @@
 }
 
 @layer components {
-  /* Hero Button Variants */
-  .btn-hero {
-    @apply bg-gradient-to-r from-primary to-primary-light text-primary-foreground px-8 py-4 rounded-xl font-semibold shadow-medium hover:shadow-strong transform hover:scale-105 transition-all duration-300;
+  /* Minimal Button Styles */
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-primary/90;
   }
 
-  .btn-hero-outline {
-    @apply border-2 border-primary text-primary bg-transparent px-8 py-4 rounded-xl font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300;
+  .btn-outline {
+    @apply border border-border text-foreground bg-transparent px-6 py-3 rounded-lg font-medium hover:bg-muted transition-all duration-200;
   }
 
-  /* Card Animations */
-  .card-hover {
-    @apply transform hover:scale-[1.02] hover:shadow-strong transition-all duration-300;
+  /* Clean Card Styles */
+  .card-minimal {
+    @apply bg-card border border-border rounded-lg shadow-minimal hover:shadow-soft transition-all duration-200;
   }
 
-  .card-glow {
-    @apply shadow-glow hover:shadow-strong transition-all duration-500;
+  /* Subtle Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out;
   }
 
-  /* Text Animations */
-  .text-gradient {
-    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
-  }
-
-  .text-accent-gradient {
-    @apply bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent;
-  }
-
-  /* Underline Animation */
-  .link-underline {
-    @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full;
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
   }
 }
 
 @layer utilities {
-  /* Animation Keyframes */
-  @keyframes fadeInUp {
+  @keyframes fadeIn {
     0% {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(8px);
     }
     100% {
       opacity: 1;
@@ -178,62 +153,19 @@
     }
   }
 
-  @keyframes fadeInScale {
+  @keyframes slideUp {
     0% {
       opacity: 0;
-      transform: scale(0.9);
+      transform: translateY(16px);
     }
     100% {
       opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  @keyframes slideInRight {
-    0% {
-      opacity: 0;
-      transform: translateX(50px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  @keyframes bounce-gentle {
-    0%, 100% {
       transform: translateY(0);
     }
-    50% {
-      transform: translateY(-10px);
-    }
   }
 
-  .animate-fade-in-up {
-    animation: fadeInUp 0.6s ease-out;
-  }
-
-  .animate-fade-in-scale {
-    animation: fadeInScale 0.5s ease-out;
-  }
-
-  .animate-slide-in-right {
-    animation: slideInRight 0.7s ease-out;
-  }
-
-  .animate-bounce-gentle {
-    animation: bounce-gentle 2s ease-in-out infinite;
-  }
-
-  .animation-delay-200 {
-    animation-delay: 200ms;
-  }
-
-  .animation-delay-400 {
-    animation-delay: 400ms;
-  }
-
-  .animation-delay-600 {
-    animation-delay: 600ms;
-  }
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-400 { animation-delay: 400ms; }
 }
